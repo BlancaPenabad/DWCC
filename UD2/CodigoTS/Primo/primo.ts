@@ -11,5 +11,5 @@ function isPrime(n:number):void{
     return console.log("Es primo.");
 }
 
-let numero:number = parseInt(prompt("Escribe un número:"));
+let numero:number | null = parseInt(prompt("Escribe un número:"));
 isPrime(numero);
