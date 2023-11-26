@@ -18,6 +18,7 @@ function abrir(){
 function cerrar(){
     if(newWindow){
         newWindow.close();
+        checkCierre();
     }else{
         checkCierre()
     }
