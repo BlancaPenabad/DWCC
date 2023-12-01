@@ -8,10 +8,11 @@ let opcion = parseInt(prompt("Escribe 1 si deseas fecha en formato corto."
 
 switch(opcion){
     case 1:
+        //Hacer un formato numeric y ñadir la lengua castellana
         console.log("Fecha actual (corta): " + fechaActual.toLocaleDateString());
         break;
     case 2:
-        console.log("Fecha actual (larga): " + fechaActual.toLocaleDateString('locale',formato));
+        console.log("Fecha actual (larga): " + fechaActual.toLocaleDateString('es-ES',formato));
         break;
     case 3:
         console.log("Today's date: " + fechaActual.toLocaleDateString('en-US',formato));
