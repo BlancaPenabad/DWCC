@@ -2,15 +2,26 @@ var paisesOceania = ["Australia", "Fiji", "Kiribati", "Islas Cook",
     "Islas Marshall", "Islas Salomón", "Micronesia", "Nauru", "Niue",
     "Nueva Zelanda", "Palaos", "Papúa Nueva Guinea", "Samoa", "Tonga",
     "Tuvalu", "Vanuatu"];
+
+
+
+
 //Muestra el nº de elementos del array:
 console.log(" -Nº de países en Oceanía: ");
+
 function numPaises(paises) {
     console.log(paises.length);
 }
 numPaises(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
+
 //Muestra todos los países:
 console.log(" -Países de Oceanía ordenados alfabéticamente: ");
+
 function mostrarPaises(paises) {
     var size = paises.length;
     for (var i = 0; i < size; i++) {
@@ -19,8 +30,13 @@ function mostrarPaises(paises) {
 }
 mostrarPaises(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Muestra todos los países en sentido inverso SIN MODIFICAR EL ARRAY
 console.log(" -Países de oceanía ordenados a la inversa:");
+
 function inversa(paises) {
     var ultimo = paises.length - 1;
     for (var i = ultimo; i >= 0; i--) {
@@ -29,14 +45,23 @@ function inversa(paises) {
 }
 inversa(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Añade un país al comienzo del array:
 console.log(" -Añado un país al principio. Resultado:");
+
 function addFirst(pais) {
     paisesOceania.unshift(pais);
 }
 addFirst("Polinesia Francesa");
 mostrarPaises(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Añade un país al final del array:
 console.log(" -Añado un país al final. Resultado:");
 function addLast(pais) {
@@ -45,6 +70,10 @@ function addLast(pais) {
 addLast("Guam");
 mostrarPaises(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Elimina un elemento al comienzo del array e indica cual fue:
 function delFirst(arr) {
     console.log(" -Elimino el primer país, que es: " + arr.shift() + ". Resultado: ");
@@ -52,6 +81,10 @@ function delFirst(arr) {
 delFirst(paisesOceania);
 mostrarPaises(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Elimina un elemento al final del array e indica cual fue:
 function delLast(arr) {
     console.log(" -Elimino el último país, que es: " + arr.pop() + ". Resultado:");
@@ -59,6 +92,10 @@ function delLast(arr) {
 delLast(paisesOceania);
 mostrarPaises(paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Muestra el elemento que se encuentre en la posición que indique el usuario:
 var ind = parseInt(prompt("Ingrese la posición que desea: "));
 function findCountry(index, arr) {
@@ -67,6 +104,10 @@ function findCountry(index, arr) {
 }
 findCountry(ind, paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Muestra la posición en la que se encuentre un elemento indicado por el usuario:
 var elemento = prompt("Ingrese el país del que desea saber su posición: ");
 function findPosition(element, arr) {
@@ -80,6 +121,10 @@ function findPosition(element, arr) {
 }
 findPosition(elemento, paisesOceania);
 console.log("\n\n\n");
+
+
+
+
 //Muestra los elementos que se encuentran entre dos posiciones indicadas por el usuario:
 var p1 = parseInt(prompt("Ingresa la primera posición: "));
 var p2 = parseInt(prompt("Ingresa la segunda posición: "));
