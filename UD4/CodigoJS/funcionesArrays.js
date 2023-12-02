@@ -77,8 +77,11 @@ console.log("\n\n\n");
 
 
 //Elimina un elemento al comienzo del array e indica cual fue:
-console.log(" -Elimino el primer páis, que es: " + paisesOceania.shift() + ". Resultado: ");
 
+function delFirst(arr){
+    console.log(" -Elimino el primer país, que es: " + arr.shift() + ". Resultado: ");
+}
+delFirst(paisesOceania);
 mostrarPaises();
 console.log("\n\n\n");
 
@@ -86,7 +89,11 @@ console.log("\n\n\n");
 
 
 //Elimina un elemento al final del array e indica cual fue:
-console.log(" -Elimino el último páis, que es: " + paisesOceania.pop() + ". Resultado:");
+
+function delLast(arr){
+console.log(" -Elimino el último país, que es: " + arr.pop() + ". Resultado:");
+}
+delLast(paisesOceania);
 mostrarPaises();
 console.log("\n\n\n");
 
@@ -95,9 +102,13 @@ console.log("\n\n\n");
 
 //Muestra el elemento que se encuentre en la posición que indique el usuario:
 
-let index = prompt("Ingrese la posición que desea: ");
-let pais = paisesOceania.at(index);
-console.log(" -El país en la posición "+ index + " es: " + pais);
+let ind = prompt("Ingrese la posición que desea: ");
+
+function findCountry(index){
+    let pais = paisesOceania.at(index);
+    console.log(" -El país en la posición "+ index + " es: " + pais);
+}
+findCountry(ind);
 console.log("\n\n\n");
 
 
@@ -105,14 +116,17 @@ console.log("\n\n\n");
 
 //Muestra la posición en la que se encuentre un elemento indicado por el usuario:
 
-let element = prompt("Ingrese el país del que desea saber su posición: ");
+let elemento = prompt("Ingrese el país del que desea saber su posición: ");
 
-let posicion = paisesOceania.indexOf(element);
-    if (posicion == -1){
-        console.log("¡ERROR! El país no se encuentra en la lista, asegúrese de escribirlo correctamente.")
-    }else{
-        console.log(" -El país "+ element + ", se encuentra en la posición " + posicion);
-    }
+function findPosition(element){
+    let posicion = paisesOceania.indexOf(element);
+        if (posicion == -1){
+            console.log("¡ERROR! El país no se encuentra en la lista, asegúrese de escribirlo correctamente.")
+        }else{
+            console.log(" -El país "+ element + " se encuentra en la posición " + posicion);
+        }
+}
+findPosition(elemento);
 console.log("\n\n\n");
 
 
@@ -122,10 +136,13 @@ console.log("\n\n\n");
 let p1 = prompt("Ingresa la primera posición: ");
 let p2 = prompt("Ingresa la segunda posición: ");
 
-if(p1>=p2){
-    console.log("¡ERROR! Inténtelo de nuevo.");
-}else{
-    let entreDos = paisesOceania.slice(p1, p2);
-    console.log(" -Países entre la posición "+ p1 + " y "+ p2 + ": " + entreDos);
+function between(pos1, pos2){
+    if(pos1>=pos2){
+        console.log("¡ERROR! Inténtelo de nuevo.");
+    }else{
+        let entreDos = paisesOceania.slice(pos1, pos2);
+        console.log(" -Países entre la posición "+ pos1 + " y "+ pos2 + ": " + entreDos);
+    }
 }
+between(p1,p2);
 console.log("\n\n\n");
