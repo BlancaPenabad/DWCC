@@ -1,3 +1,15 @@
+const iniciarIntentos = () => {
+  setCookie("intentos", "0");
+};
+
+const intentos = () => {
+  let numIntentos = getCookie("intentos");
+  numIntentos++;
+  setCookie("intentos", numIntentos);
+  document.getElementById("intentos").innerHTML =
+    "Número de intentos:" + numIntentos;
+};
+
 const convertirMayusculas = () => {
   document.getElementById("nombre").value = document
     .getElementById("nombre")
@@ -67,9 +79,21 @@ const validarDni = () => {
   } else if (!dni.value.match(patronDni)) {
     errores("DNI inválido. Formato incorrecto.");
     return false;
+  } else if (!validarLetraDni(dni.value)) {
+    errores("DNI inválido. La letra no coincide.");
+    return false;
   }
 
   return true;
+};
+
+const validarLetraDni = (dni) => {
+  let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+  let numero = dni.substring(0, 8);
+  let letra = dni.substring(8).toUpperCase();
+  let resto = numero % 23;
+
+  return letra === letras.charAt(resto);
 };
 
 const validarEmail = () => {
@@ -151,6 +175,7 @@ function errores(mensaje) {
 }
 
 const validar = () => {
+  intentos();
   event.preventDefault();
   ocultarAviso();
   if (
@@ -164,6 +189,8 @@ const validar = () => {
     validarFecha() &&
     validarProvincia()
   ) {
-    document.getElementById("formulario").submit();
+    if (confirm("¿Estás seguro de enviar los datos?")) {
+      document.getElementById("formulario").submit();
+    }
   }
 };

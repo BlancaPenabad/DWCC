@@ -26,17 +26,19 @@ function getCookie(name) {
 const limpiarFormulario = (formulario) => {
   ocultarAviso();
   document.getElementById(formulario).reset();
+  setCookie("intentos", "0");
+  document.getElementById("intentos").style.display = "none";
 };
 
-// Función que pone a 0 el número de intentos en las cookies
-// y que oculta el div de errores
+// Función que oculta el div de errores
 const ocultarAviso = () => {
   document.getElementById("errores").style.display = "none";
 };
 
-// Función que muestra el div de errores
+// Función que muestra el div de errores e intentos
 const mostrarAviso = () => {
   document.getElementById("errores").style.display = "block";
+  document.getElementById("intentos").style.display = "block";
 };
 
 // Patrones
