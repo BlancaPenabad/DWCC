@@ -1,5 +1,9 @@
 let fallos = "";
 
+const limpiar = () => {
+
+}
+
 const validar = () => {
     validarNombre();
     validarApellido(); 
@@ -22,6 +26,7 @@ const convertirMayusculas = () => {
 // Validaciones
 
 const validarNombre = () => {
+    convertirMayusculas();
     let patronNombreApellido = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let nombre = document.getElementById("nombre");
 
