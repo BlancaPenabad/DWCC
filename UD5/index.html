@@ -1,72 +1,30 @@
 <!DOCTYPE html>
-    <htm xmlns="http://www.w3.org/1999/xhtml">
+<htm xmlns="http://www.w3.org/1999/xhtml">
+
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>DWEC05 - Solución Tarea</title>
-    <script type="text/javascript" src="scriptSolucion.js"></script>
-        <style type="text/css">
-            label{
-                width: 150px;
-                float:left;
-                margin-bottom:5px;
-            }
-            input,select {
-                width:150px;
-                float:left;
-                margin-bottom:5px;
-            }
-            fieldset{
-                background:#66CCCC;
-                width:350px;
-                border: thick solid #306;
-            }
-            legend{
-                border-top-width: medium;
-                border-right-width: medium;
-                border-bottom-width: medium;
-                border-left-width: medium;
-                border-top-style: solid;
-                border-right-style: solid;
-                border-bottom-style: solid;
-                border-left-style: solid;
-                background-color: #FFF;
-            }
-            #mensajes{
-                float: left;
-                background:#33FF33;
-                width: 325px;
-            }
-            #errores{
-                float: left;
-                background:#FF6633;
-                width: 325px;
-            }
-            #intentos{
-                float: left;
-                background:#CCFF33;
-                width: 325px;
-            }
-            .error{
-                border: solid 2px #FF0000;
-            }
-        </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>DWEC05 - Solución Tarea</title>
+        <script type="text/javascript" src="scriptSolucion.js"></script>
+        <script type="text/javascript" src="comun.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
+
     <body>
         <fieldset>
             <legend>DWEC05 - Solución Tarea</legend>
             <form name="formulario" id="formulario" action="http://www.google.es" method="get">
                 <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" onblur="validarNombre()" /> <!--On blur es para la pérdida de foco-->
+                <input type="text" name="nombre" id="nombre" onblur="validarNombre()" />
                 <label for="apellidos">Apellidos:</label>
-                    <input type="text" name="apellidos" id="apellidos" onblur="validarApellido()" />
+                <input type="text" name="apellidos" id="apellidos" onblur="validarApellido()" />
                 <label for="edad">Edad:</label>
-                    <input name="edad" type="text" id="edad" maxlength="3" onblur="validarEdad()" />
+                <input name="edad" type="text" id="edad" maxlength="3" onblur="validarEdad()" />
                 <label for="nif">NIF:</label>
-                    <input name="nif" type="text" id="nif" onblur="validarDni()" />
+                <input name="nif" type="text" id="nif" onblur="validarDni()" />
                 <label for="email">E-mail:</label>
-                    <input name="email" type="text" id="email" onblur="validarEmail()" />
+                <input name="email" type="text" id="email" onblur="validarEmail()" />
                 <label for="provincia">Provincia:</label>
-                <select name="provincia" id="provincia" onblur="validarProvincia()" >
+                <select name="provincia" id="provincia" onblur="validarProvincia()">
                     <option value="0" selected="selected">Seleccione Provincia</option>
                     <option value="C">A Coruña</option>
                     <option value="LU">Lugo</option>
@@ -74,17 +32,19 @@
                     <option value="OU">Pontevedra</option>
                 </select>
                 <label for="fecha">Fecha Nacimiento:</label>
-                    <input name="fecha" type="text" id="fecha" onblur="validarFecha()" />
+                <input name="fecha" type="text" id="fecha" onblur="validarFecha()" />
                 <label for="telefono">Teléfono:</label>
-                    <input name="telefono" type="text" id="telefono" maxlength="9" onblur="validarTlf()" />
+                <input name="telefono" type="text" id="telefono" maxlength="9" onblur="validarTlf()" />
                 <label for="hora">Hora de visita:</label>
-                    <input name="hora" type="text" id="hora" onblur="validarHora()" />
+                <input name="hora" type="text" id="hora" onblur="validarHora()" />
                 <!--Botones-->
-                <input type="reset" name="limpiar" id="button" value="Limpiar" onclick="limpiar()" />
-                <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar()" />
+                <input type="button" name="limpiar" id="button" value="Limpiar"
+                    onclick="limpiarFormulario('formulario');" />
+                <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar();" />
             </form>
-                <div id="errores"></div>
-                <div id="intentos"></div>
+            <div id="errores"></div>
+            <div id="intentos"></div>
         </fieldset>
     </body>
-</html>
+
+    </html>
