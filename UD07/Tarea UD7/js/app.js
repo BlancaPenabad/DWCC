@@ -6,6 +6,9 @@ let patronUsuario =/^[\w]{1,20}$/;
 let patronClave =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 let patronTelefono =/\d{9}$/;
 
+
+/*A continuación se realizan todas las validaciones de los datos.
+Los datos erróneos generarán un aviso por consola.*/
 function validarNombre(nombre){
     if(!patronNombre.test(nombre)){
         console.log("¡Sólo caracteres alfabéticos!");
@@ -54,7 +57,7 @@ function validarTelefono(tlf){
     return true;
 }
 
-
+//Método para validar el formulario entero:
 function validarFormulario(){
     let nombre = document.getElementById("nombre").value;
     let apellidos = document.getElementById("apellidos").value;
@@ -76,19 +79,19 @@ function validarFormulario(){
 
 // Envio de datos con XMLHttpRequest
 function sendData(){
-    let peticion = new XMLHttpRequest();
-    let data = new FormData(document.getElementById("formulario"));
+    let peticion = new XMLHttpRequest(); //Creo el objeto XMLHttpRequest
+    let data = new FormData(document.getElementById("formulario")); //Creo el objeto FormData donde almaceno todos los datos del formulario
 
-    peticion.open("POST", "php/registrar.php", true);
+    peticion.open("POST", "php/registrar.php", true); //Creo la petición asíncrona.
     peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     peticion.onreadystatechange = function(){
         if(peticion.readyState === XMLHttpRequest.DONE){
-            if(peticion.status === 200){
+            if(peticion.status === 200){ //Si el estado de la petición es OK... ejecuta todo lo de abajo:
                 document.getElementById("info-respuesta").style.display = "block";
                 document.getElementById("respuesta-servidor").innerHTML = peticion.responseText;
             }else{
-                alert("No se han podido envíar los datos.")
+                alert("No se han podido envíar los datos.");
             }
         }
     };
