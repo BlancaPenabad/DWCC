@@ -96,6 +96,7 @@ function sendData(){
         }
     };
 
+    //A continuación envío los datos:
     peticion.send(
         "nombre=" + data.get("nombre") + "&" +
         "apellidos=" + data.get("apellidos") + "&" +
